@@ -8,7 +8,7 @@ using namespace std;
 
 #define BigInt bitset<B>
 
-const int F=520,B=F+1;
+const int F=20000,B=F+1;
 
 bool operator<(const BigInt& a,const BigInt& b)
 {
@@ -154,6 +154,17 @@ void A1()
 {
 	++d[0];
 	song();
+}
+
+BigInt toBigInt(char *s)
+{
+	BigInt a;
+	for(char *t(s);*t;++t)
+	{
+		a*=toBigInt(10);
+		a+=toBigInt((*t)-48);
+	}
+	return a;
 }
 
 void print(BigInt a)
